@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Box, MantineProvider } from '@mantine/core'
 import useSWR from 'swr'
 import './App.css'
+import AddTodo from './components/AddTodo'
 
 
 export const ENDPOINT = window.location.protocol + "//" + window.location.hostname + ":4000"
@@ -16,7 +17,7 @@ function App() {
     <MantineProvider withGlobalStyles withNormalizeCSS>
       {JSON.stringify(data)}
       <Box>
-        Hello world
+          <AddTodo />
       </Box>
     </MantineProvider>
   )

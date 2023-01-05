@@ -96,3 +96,9 @@ $ go get -u github.com/labstack/echo/v4/middleware
 # modify './backend/main.go' like this commit
 ```
 the commit implement API '/api/todos' by GET method and allow 'localhost:5173' fetch
+
+### 8. implement dialog 'AddTodo' in frontend
+```
+# check this repository 8'th commit
+```
+add file 'AddTodo.tsx' into './frontend/src/components' and modify ./frontend/src/App.tsx' for dialog AddTodo
