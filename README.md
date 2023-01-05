@@ -61,3 +61,12 @@ $ yarn add @mantine/hooks @mantine/core swr @primer/octicons-react
 $ yarn dev # launch testing server
 # use browser to visit http://localhost:5173/ for check status
 ```
+5. modify UI to show 'Hello World'
+```
+# check this repository 5'th commit
+$ cd frontend
+$ yarn dev # launch testing server
+# use browser to visit http://localhost:5173/ for check status
+# and modify './frontend/index.html' and './frontend/src/App.tsx' like this commit
+# Web Browser will auto reload modify result when save file
+```
