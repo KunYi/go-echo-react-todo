@@ -51,3 +51,13 @@ $ curl -X POST \
 # response
 [{"id":1,"title":"Testing","done":false,"body":"write 3rd commit"}]
 ```
+4. initial frontend development environment
+```
+# check this repository 4'th commit
+
+# use NodeJS LTS 16.19.0
+$ cd frontend
+$ yarn add @mantine/hooks @mantine/core swr @primer/octicons-react
+$ yarn dev # launch testing server
+# use browser to visit http://localhost:5173/ for check status
+```
