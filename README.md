@@ -1,4 +1,5 @@
 make Todo App use golang with ECHO framework + React + Typescript
+===
 
 the repository code reference another project [go-react-todo](https://github.com/KunYi/go-react-todo)
 
@@ -7,9 +8,9 @@ the repository code reference another project [go-react-todo](https://github.com
  $ git log --oneline --reverse
 ```
 
-Step by Step
+## Step by Step
 
-1. prepare backend/server and frontend/UI  # initial commit
+### 1. prepare backend/server and frontend/UI  # initial commit
 ```
  # check this repository 1'st commit
  $ mkdir go-echo-react-todo
@@ -22,7 +23,7 @@ Step by Step
  $ yarn create vite frontend --template react-ts  # create frontend project
 ```
 
-2. create backend server with API '/healthcheck'
+### 2. create backend server with API '/healthcheck'
 ```
 # check this repository 2'nd commit
 # we to create ./backend/main.go file and wrote some code for test
@@ -36,7 +37,7 @@ $ curl -X GET localhost:4000/healthcheck
 OK
 ```
 
-3. create new API '/api/todos' for add Todo item
+### 3. create new API '/api/todos' for add Todo item
 ```
 # check this repository 3'rd commit
 # add some code snippet into ./backend/main.go
@@ -51,7 +52,7 @@ $ curl -X POST \
 # response
 [{"id":1,"title":"Testing","done":false,"body":"write 3rd commit"}]
 ```
-4. initial frontend development environment
+### 4. initial frontend development environment
 ```
 # check this repository 4'th commit
 
@@ -61,7 +62,7 @@ $ yarn add @mantine/hooks @mantine/core swr @primer/octicons-react
 $ yarn dev # launch testing server
 # use browser to visit http://localhost:5173/ for check status
 ```
-5. modify UI to show 'Hello World'
+### 5. modify UI to show 'Hello World'
 ```
 # check this repository 5'th commit
 $ cd frontend
@@ -70,3 +71,17 @@ $ yarn dev # launch testing server
 # and modify './frontend/index.html' and './frontend/src/App.tsx' like this commit
 # Web Browser will auto reload modify result when save file
 ```
+### 6. modify UI for show Todo items
+```
+# check this repository 6'th commit
+
+# add more packages for mantine v5
+$ cd frontend
+$ yarn add @emotion/cache @emotion/react @emotion/serialize @emotion/utils
+
+# modify ./frontend/src/App.tsx like this commit
+# to implement fetch API 'localhost:4000/api/todos'
+```
+Use **Inspect(DevTool)** of Browser to check status
+will show **'Status code:405, CROS Missing Allow Origin'** in **Network** of Inspect.
+Next step will fixed the issues
