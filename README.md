@@ -31,6 +31,23 @@ $ cd backend # change workdir into 'backend'
 $ go run main.go # launch server, press ctrl+'C' to break the server
 
 # you can use 'curl' to check the state of server
-$ curl localhost:4000/healthcheck
+$ curl -X GET localhost:4000/healthcheck
+# response
 OK
+```
+
+3. create new API '/api/todos' for add Todo item
+```
+# check this repository 3'rd commit
+# add some code snippet into ./backend/main.go
+
+$ cd backend # change workdir into 'backend'
+$ go run main.go # launch server, press ctrl+'C' to break the server
+# you can use 'curl' to check the state of server
+$ curl -X POST \
+  -H 'Content-Type: application/json' \
+  -d '{ "title":"Testing", "body":"write 3rd commit" }' \
+  localhost:4000/api/todos
+# response
+[{"id":1,"title":"Testing","done":false,"body":"write 3rd commit"}]
 ```
