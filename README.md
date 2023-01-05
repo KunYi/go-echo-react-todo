@@ -79,9 +79,20 @@ $ yarn dev # launch testing server
 $ cd frontend
 $ yarn add @emotion/cache @emotion/react @emotion/serialize @emotion/utils
 
-# modify ./frontend/src/App.tsx like this commit
+# modify './frontend/src/App.tsx' like this commit
 # to implement fetch API 'localhost:4000/api/todos'
 ```
 Use **Inspect(DevTool)** of Browser to check status
 will show **'Status code:405, CROS Missing Allow Origin'** in **Network** of Inspect.
 Next step will fixed the issues
+
+### 7. fixed server code
+```
+# check this repository 7'th commit
+
+# to get middleware of ECHO
+$ cd backend
+$ go get -u github.com/labstack/echo/v4/middleware
+# modify './backend/main.go' like this commit
+```
+the commit implement API '/api/todos' by GET method and allow 'localhost:5173' fetch
