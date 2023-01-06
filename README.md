@@ -120,3 +120,8 @@ will invoke /api/todos to create a todo item
 ```
 implement new API **'/api/todos/:id/done'**, to modify './backend/main.go' like this commit
 
+### 11. complete done action of frontend
+```
+# check this repository 11'th commit
+```
+modify './frontend/src/App.tsx' like this commit
