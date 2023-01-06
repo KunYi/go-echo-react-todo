@@ -102,3 +102,14 @@ the commit implement API '/api/todos' by GET method and allow 'localhost:5173' f
 # check this repository 8'th commit
 ```
 add file 'AddTodo.tsx' into './frontend/src/components' and modify ./frontend/src/App.tsx' for dialog AddTodo
+
+### 9. complete AddTodo
+```
+# check this repository 9'th commit
+
+# install new package for dialog 'AddTodo'
+$ cd frontend
+$ yarn add @mantine/form
+```
+modify './frontend/src/App.tsx' and ./frontend/src/components/AddTodo.tsx like this commit
+will invoke /api/todos to create a todo item
