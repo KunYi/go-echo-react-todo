@@ -113,3 +113,10 @@ $ yarn add @mantine/form
 ```
 modify './frontend/src/App.tsx' and ./frontend/src/components/AddTodo.tsx like this commit
 will invoke /api/todos to create a todo item
+
+### 10. implement new API for done todo item
+```
+# check this repository 10'th commit
+```
+implement new API **'/api/todos/:id/done'**, to modify './backend/main.go' like this commit
+

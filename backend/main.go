@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -46,7 +47,29 @@ func main() {
 	})
 
 	e.GET("/api/todos", func(c echo.Context) error {
-		return c.JSON(http.StatusCreated, todos)
+		return c.JSON(http.StatusAccepted, todos)
+	})
+
+	e.PATCH("/api/todos/:id/done", func(c echo.Context) error {
+		id, err := strconv.Atoi(c.Param("id"))
+
+		if err != nil {
+			return c.String(http.StatusBadRequest, "Invalid id")
+		}
+
+		var found = false
+		for i, t := range todos {
+			if t.ID == id {
+				todos[i].Done = true
+				found = true
+				break
+			}
+		}
+
+		if found {
+			return c.JSON(http.StatusAccepted, todos)
+		}
+		return c.String(http.StatusBadRequest, "Invalid id")
 	})
 
 	e.Logger.Fatal(e.Start(":4000"))
