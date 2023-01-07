@@ -125,3 +125,15 @@ implement new API **'/api/todos/:id/done'**, to modify './backend/main.go' like 
 # check this repository 11'th commit
 ```
 modify './frontend/src/App.tsx' like this commit
+
+### 12. integration frontend and backend
+```
+# check this repository 12'th commit
+$ cd frontend
+$ yarn build  # the command will build React app to static file. file generation under './frontend/dist'
+# then modify './backend/main.go' like this commit, let Echo framework to handle ReactJs files
+$ cd backend
+$ go run main.go # to launch server know
+# use Web Browser to visit http://localhost:4000/ to use app
+```
+

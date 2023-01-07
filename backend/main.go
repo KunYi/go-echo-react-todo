@@ -6,7 +6,6 @@ import (
 	"strconv"
 
 	"github.com/labstack/echo/v4"
-	"github.com/labstack/echo/v4/middleware"
 )
 
 type Todo struct {
@@ -23,10 +22,13 @@ func main() {
 	todos := []Todo{}
 
 	/* add CORS policy */
-	e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
-		AllowOrigins: []string{"http://localhost:5173", "http://192.168.*:5173"},
-		AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
-	}))
+	// remove this CORS settings
+	// e.Use(middleware.CORSWithConfig(middleware.CORSConfig{
+	// 	AllowOrigins: []string{"http://localhost:5173", "http://192.168.*:5173"},
+	// 	AllowHeaders: []string{echo.HeaderOrigin, echo.HeaderContentType, echo.HeaderAccept},
+	// }))
+
+	e.Static("/", "../frontend/dist")
 
 	e.GET("/healthcheck", func(c echo.Context) error {
 		return c.String(http.StatusOK, "OK")
